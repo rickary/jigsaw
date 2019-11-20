@@ -12,6 +12,7 @@ const notify = require("gulp-notify");
 
 const cssDir = "public/css";
 const sassDir = "_dev/scss/**/*.scss";
+const componentDir = "components/**/*.scss";
 
 function compileSass() {
   return gulp
@@ -45,12 +46,7 @@ function fractalStart() {
 }
 
 function watchSass() {
-  gulp.watch(sassDir, compileSass);
+  gulp.watch([componentDir, sassDir], compileSass);
 }
 
-//gulp.task("default", gulp.parallel(fractalStart, compileSass, watchSass));
-//gulp.task("default", gulp.series(compileSass, watchSass));
-gulp.task(
-  "default",
-  gulp.series(compileSass, gulp.parallel(fractalStart, watchSass))
-);
+gulp.task("default", gulp.series(fractalStart, compileSass, watchSass));
