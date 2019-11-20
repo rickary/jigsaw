@@ -6,7 +6,9 @@
   --border-style                :   solid;
   --border-width                :   1px;
 
+  --transition-delay            :   0s;
   --transition-duration         :   0.5s;
   --transition-duration--fast   :   0.1s;
   --transition-duration--slow   :   1s;
+  --transition-timing-function  :   ease-in-out;
 }

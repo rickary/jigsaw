@@ -1,5 +1,6 @@
 @import "component-helper.scss";
+@import "jigsaw/index.scss";
 
 //  Components
 
-@import "../../components/bits/button.scss";
+@import "./components/bits/button/button.scss";
