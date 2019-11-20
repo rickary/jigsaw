@@ -1,0 +1,52 @@
+//------------------------------------//
+//  Media Query
+//------------------------------------//
+
+@mixin mq($point, $query1: min, $query2: width) {
+    
+  @if $query1 == max {
+    @media screen and (#{$query1}-#{$query2}: $point - 1px) {
+      @content;
+    }
+  } @else {
+    @media screen and (#{$query1}-#{$query2}: $point) {
+      @content;
+    }
+  }
+}
+
+
+
+
+
+//------------------------------------//
+//  Font Size
+//------------------------------------//
+
+@mixin font($size) {
+  @if $size == xxl {
+    font-size: var(--font--xxl-size);
+    font-weight: var(--font--xxl-weight);
+    line-height: var(--font--xxl-lh );
+  } @else if $size == xl {
+    font-size: var(--font--xl-size);
+    font-weight: var(--font--xl-weight);
+    line-height: var(--font--xl-lh );
+  } @else if $size == l {
+    font-size: var(--font--l-size);
+    font-weight: var(--font--l-weight);
+    line-height: var(--font--l-lh );
+  } @else if $size == m {
+    font-size: var(--font--m-size);
+    font-weight: var(--font--m-weight);
+    line-height: var(--font--m-lh );
+  } @else if $size == s {
+    font-size: var(--font--s-size);
+    font-weight: var(--font--s-weight);
+    line-height: var(--font--s-lh );
+  } @else if $size == xs {
+    font-size: var(--font--xs-size);
+    font-weight: var(--font--xs-weight);
+    line-height: var(--font--xs-lh );
+  } 
+}

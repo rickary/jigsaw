@@ -1,0 +1,36 @@
+//	Helpers
+//  =======
+
+//	For:
+//	Small helper classes
+
+
+.u-hide-text {
+	display: inline-block;
+	text-indent: -999em;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.u-visually-hidden {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+.u-scrollto {
+	position: relative;
+  top: -150px;
+  height: 0;
+}
+
+.u-text-size--xxl { @include font(xxl); }
+.u-text-size--xl  { @include font(xl); }
+.u-text-size--l   { @include font(l); }
+.u-text-size--m   { @include font(m); }
+.u-text-size--s   { @include font(s); }
+.u-text-size--xs  { @include font(xs); }
+
+.u-text-align--center   { text-align: center; }
+.u-text-align--left     { text-align: left; }
+.u-text-aligh--right    { text-align: right; }

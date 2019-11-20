@@ -1,0 +1,30 @@
+:root {
+  --base-font-family    :   sans-serif;
+  --base-font-size      :   1.6rem;
+  --base-font-weight    :   normal;
+  --base-line-height    :   1.5;
+
+  --font--xxl-size      :   var(--base-font-size) * 4;
+  --font--xxl-weight    :   var(--base-font-weight);
+  --font--xxl-lh        :   var(--base-line-height);
+
+  --font--xl-size       :   var(--base-font-size) * 3;
+  --font--xl-weight     :   var(--base-font-weight);
+  --font--xl-lh         :   var(--base-line-height);
+
+  --font--l-size        :   var(--base-font-size) * 2;
+  --font--l-weight      :   var(--base-font-weight);
+  --font--l-lh          :   var(--base-line-height);
+
+  --font--m-size        :   var(--base-font-size);
+  --font--m-weight      :   var(--base-font-weight);
+  --font--m-lh          :   var(--base-line-height);
+
+  --font--s-size        :   var(--base-font-size) * .75;
+  --font--s-weight      :   var(--base-font-weight);
+  --font--s-lh          :   var(--base-line-height);
+
+  --font--xs-size       :   var(--base-font-size) * .5;
+  --font--xs-weight     :   var(--base-font-weight);
+  --font--xs-lh         :   var(--base-line-height);
+}
