@@ -5,31 +5,36 @@ const fractal = require("./fractal.js");
 const logger = fractal.cli.console;
 const autoprefixer = require("gulp-autoprefixer");
 const sass = require("gulp-sass");
+const postcss = require("gulp-postcss");
+const postcssCustomProperties = require("postcss-custom-properties");
+const stripComments = require("gulp-strip-css-comments");
+const notify = require("gulp-notify");
 
-gulp.task("sass", function() {
+const cssDir = "public/css";
+const sassDir = "_dev/scss/**/*.scss";
+
+function compileSass() {
   return gulp
-    .src("_dev/scss/**/*.scss")
+    .src(sassDir)
     .pipe(
       sass().on("error", function(err) {
         console.error(err.message);
         this.emit("end");
       })
     )
+    .pipe(stripComments())
     .pipe(
       autoprefixer({
-        grid: true,
-        flexbox: true
+        flexbox: true,
+        grid: true
       })
     )
-    .pipe(sass())
-    .pipe(gulp.dest("public/css"));
-});
+    .pipe(postcss([postcssCustomProperties()]))
+    .pipe(gulp.dest(cssDir))
+    .pipe(notify("Sass compiled"));
+}
 
-gulp.task("watch", ["sass"], function() {
-  gulp.watch(["components/**/*.scss", "_dev/scss/**/*.scss"], ["sass"]);
-});
-
-gulp.task("fractal:start", function() {
+function fractalStart() {
   const server = fractal.web.server({
     sync: true
   });
@@ -37,6 +42,15 @@ gulp.task("fractal:start", function() {
   return server.start().then(() => {
     logger.success(`Fractal server is now running at ${server.url}`);
   });
-});
+}
 
-gulp.task("default", ["fractal:start", "sass", "watch"]);
+function watchSass() {
+  gulp.watch(sassDir, compileSass);
+}
+
+//gulp.task("default", gulp.parallel(fractalStart, compileSass, watchSass));
+//gulp.task("default", gulp.series(compileSass, watchSass));
+gulp.task(
+  "default",
+  gulp.series(compileSass, gulp.parallel(fractalStart, watchSass))
+);
