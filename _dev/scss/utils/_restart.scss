@@ -65,9 +65,9 @@ html {
 body {
 	background-color: var(--color-body);
 	color: var(--color-text);
-	font-family: var(--base-font-family);
-	font-weight: var(--base-font-weight);
-	line-height: var(--base-line-height);
+	font-family: var(--font-family);
+	font-weight: var(--font-weight);
+	line-height: var(--line-height);
 }
 
 // Box Sizing
@@ -87,9 +87,9 @@ img {
 //  Typography
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: var(--base-font-family);
-	font-size: var(--base-font-size);
-	font-weight: var(--base-font-weight);
+	font-family: var(--font-family);
+	font-size: var(--font-size);
+	font-weight: var(--font-weight);
 	margin: 0;
 }
 

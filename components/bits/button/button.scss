@@ -2,9 +2,7 @@
 //  Tokens
 //------------------------------------//
 
-:root {
-
-  //  Default
+.c-btn {
   --button-background-color            :   var(--color-primary);
 
   --button-border-color                :   var(--color-border);
@@ -14,9 +12,12 @@
 
   --button-color                       :   white;
 
-  --button-font-family                 :   var(--base-font-family);
-  --button-font-size                   :   var(--base-font-size);
-  --button-font-weight                 :   var(--base-font-weight);
+  --button-font-family                 :   var(--font-family);
+  --button-font-size                   :   var(--font-size);
+  --button-font-weight                 :   var(--font-weight);
+  --button-letter-spacing              :   0;
+  --button-line-height                 :   1;
+  --button-text-transform              :   none;
 
   --button-padding-bottom              :   1em;
   --button-padding-left                :   2em;
@@ -24,64 +25,26 @@
   --button-padding-top                 :   1em;
 
   --button-transition-delay            :   var(--transition-delay);
-  --button-transition-duration         :   var(--transition-duration);
+  --button-transition-duration         :   var(--transition-duration--fast);
   --button-transition-property         :   all;
   --button-transition-timing-function  :   var(--transition-timing-function);
 
+  //  Hover
+  --button-background-color--hover     :   var(--button-color);
+  --button-border-color--hover         :   var(--button-background-color);
+  --button-border-style--hover         :   var(--button-border-style);
+  --button-border-width--hover         :   var(--button-border-width);
+  --button-color--hover                :   var(--button-background-color); 
 
-  //  Sizes
-  --button--large-font-size            :   3rem;
-  --button--large-font-weight          :   var(--base-font-weight);
-
-  --button--large-padding-bottom       :   var(--button-padding-bottom);
-  --button--large-padding-left         :   var(--button-padding-left);
-  --button--large-padding-right        :   var(--button-padding-right);
-  --button--large-padding-top          :   var(--button-padding-top);
-
-  --button--small-font-size            :   1.4rem;
-  --button--small-font-weight          :   var(--base-font-weight);
-
-  --button--small-padding-bottom       :   var(--button-padding-bottom);
-  --button--small-padding-left         :   var(--button-padding-left);
-  --button--small-padding-right        :   var(--button-padding-right);
-  --button--small-padding-top          :   var(--button-padding-top);
-
-
-  //  Colours
-  --button--border-background-color            :   none;
-  --button--border-border-color                :   var(--color-primary);
-  --button--border-border-radius               :   var(--button-border-radius);
-  --button--border-border-style                :   solid;
-  --button--border-border-width                :   1px;
-  --button--border-color                       :   var(--color-text);
-
-  --button--disabled-background-color            :   var(--color-muted);
-  --button--disabled-border-color                :   var(--button-border-color);
-  --button--disabled-border-radius               :   var(--button-border-radius);
-  --button--disabled-border-style                :   var(--button-border-style);
-  --button--disabled-border-width                :   var(--button-border-width);
-  --button--disabled-color                       :   var(--color-text);
-
-  --button--error-background-color            :   var(--color-error);
-  --button--error-border-color                :   var(--button-border-color);
-  --button--error-border-radius               :   var(--button-border-radius);
-  --button--error-border-style                :   var(--button-border-style);
-  --button--error-border-width                :   var(--button-border-width);
-  --button--error-color                       :   white;
-
-  --button--secondary-background-color            :   var(--color-secondary);
-  --button--secondary-border-color                :   var(--button-border-color);
-  --button--secondary-border-radius               :   var(--button-border-radius);
-  --button--secondary-border-style                :   var(--button-border-style);
-  --button--secondary-border-width                :   var(--button-border-width);
-  --button--secondary-color                       :   var(--color-text);
-
-  --button--success-background-color            :   var(--color-success);
-  --button--success-border-color                :   var(--button-border-color);
-  --button--success-border-radius               :   var(--button-border-radius);
-  --button--success-border-style                :   var(--button-border-style);
-  --button--success-border-width                :   var(--button-border-width);
-  --button--success-color                       :   white;
+  //  Focus
+  --button-background-color--focus     :   var(--button-background-color--hover);
+  --button-border-color--focus         :   var(--button-border-color--hover);
+  --button-border-style--focus         :   var(--button-border-style--hover);
+  --button-border-width--focus         :   var(--button-border-width--hover);
+  --button-color--focus                :   var(--button-color--hover);
+  --button-outline-color--focus        :   var(--button-border-color--hover);
+  --button-outline-style--focus        :   var(--button-border-style--hover);
+  --button-outline-width--focus        :   var(--button-border-width--hover);
 }
 
 
@@ -103,10 +66,13 @@
   font-family: var(--button-font-family);
   font-size: var(--button-font-size);
   font-weight: var(--button-font-weight);
+  letter-spacing: var(--button-letter-spacing);
+  line-height: var(--button-line-height);
   padding-bottom: var(--button-padding-bottom);
   padding-left: var(--button-padding-left);
   padding-right: var(--button-padding-right);
   padding-top: var(--button-padding-top);
+  text-transform: var(--button-text-transform);
   transition-delay: var(--button-transition-delay);
   transition-duration: var(--button-transition-duration);
   transition-property: var(--button-transition-property);
@@ -119,10 +85,24 @@
   &:focus {
       text-decoration: none;
   }
-  
-  &:active,
-  &:visited {
-      outline: none;
+
+  &:hover {
+    background-color: var(--button-background-color--hover);
+    border-color: var(--button-border-color--hover);
+    border-style: var(--button-border-style--hover);
+    border-width: var(--button-border-width--hover);
+    color: var(--button-color--hover);
+  }
+
+  &:focus {
+    background-color: var(--button-background-color--focus);
+    border-color: var(--button-border-color--focus);
+    border-style: var(--button-border-style--focus);
+    border-width: var(--button-border-width--focus);
+    color: var(--button-color--focus);
+    outline-color: var(--button-outline-color--focus);
+    outline-style: var(--button-outline-style--focus);
+    outline-width: var(--button-outline-width--focus);
   }
 }
 
@@ -133,21 +113,11 @@
 //------------------------------------//
 
 .c-btn--small {
-  font-size: var(--button--small-font-size);
-  font-weight: var(--button--small-font-size);
-  padding-bottom: var(--button--small-padding-bottom);
-  padding-left: var(--button--small-padding-left);
-  padding-right: var(--button--small-padding-right);
-  padding-top: var(--button--small-padding-top);
+  --button-font-size      :   1.4rem;
 }
 
 .c-btn--large {
-  font-size: var(--button--large-font-size);
-  font-weight: var(--button--large-font-size);
-  padding-bottom: var(--button--large-padding-bottom);
-  padding-left: var(--button--large-padding-left);
-  padding-right: var(--button--large-padding-right);
-  padding-top: var(--button--large-padding-top);
+  --button-font-size      :   3rem;
 }
 
 .c-btn--full {
@@ -162,49 +132,35 @@
 //------------------------------------//
 
 .c-btn--border {
-  background-color: var(--button--border-background-color);
-  border-color: var(--button--border-border-color);
-  border-radius: var(--button--border-border-radius);
-  border-style: var(--button--border-border-style);
-  border-width: var(--button--border-border-width);
-  color: var(--button--border-color);
+  --button-background-color            :   none;
+  --button-border-color                :   var(--color-primary);
+  --button-border-style                :   solid;
+  --button-border-width                :   1px;
+  --button-color                       :   var(--color-text);
+  
+  --button-border-color--hover         :   var(--button-border-color);
+  --button-border-style--hover         :   var(--button-border-style);
+  --button-border-width--hover         :   var(--button-border-width);
 }
 
 .c-btn--disabled {
-  background-color: var(--button--disabled-background-color);
-  border-color: var(--button--disabled-border-color);
-  border-radius: var(--button--disabled-border-radius);
-  border-style: var(--button--disabled-border-style);
-  border-width: var(--button--disabled-border-width);
-  color: var(--button--disabled-color);
+  --button-background-color            :   var(--color-muted);
+  --button-color                       :   var(--color-text);
+
   cursor: text;
 }
 
 .c-btn--error {
-  background-color: var(--button--error-background-color);
-  border-color: var(--button--error-border-color);
-  border-radius: var(--button--error-border-radius);
-  border-style: var(--button--error-border-style);
-  border-width: var(--button--error-border-width);
-  color: var(--button--error-color);
+  --button-background-color            :   var(--color-error);
 }
 
 .c-btn--secondary {
-  background-color: var(--button--secondary-background-color);
-  border-color: var(--button--secondary-border-color);
-  border-radius: var(--button--secondary-border-radius);
-  border-style: var(--button--secondary-border-style);
-  border-width: var(--button--secondary-border-width);
-  color: var(--button--secondary-color);
+  --button-background-color            :   var(--color-secondary);
+  --button-color                       :   var(--color-text);
 }
 
 .c-btn--success {
-  background-color: var(--button--success-background-color);
-  border-color: var(--button--success-border-color);
-  border-radius: var(--button--success-border-radius);
-  border-style: var(--button--success-border-style);
-  border-width: var(--button--success-border-width);
-  color: var(--button--success-color);
+  --button-background-color            :   var(--color-success);
 }
 
 
@@ -217,5 +173,3 @@
   align-items: center;
   display: flex;
 }
-
-

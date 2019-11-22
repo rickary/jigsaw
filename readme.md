@@ -41,6 +41,20 @@ The **components** folder is organised into *bits* (e.g. buttons, text input etc
 
 ### Using in individual projects
 
+In the project directory:
+
+- In terminal, run `npm link @rickary/jigsaw` - note that you need to complete this step each time you make a change to package.json
+- In `node_modules` of the project, add `"@rickary/jigsaw": "github:rickary/jigsaw"` as a dependency
+- Run `npm install`.
+
+In the master.scss file for the project
+- Import component-helper
+- Import required components
+- Import project global tokens
+- Import project component override tokens
+- Import project specific styles
 
 
 ## Versions
+
+0.1 - current

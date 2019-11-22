@@ -1,0 +1,69 @@
+:root {
+  --typography--xxl-font-family       : var(--font-family);
+  --typography--xxl-font-size         : 3.2rem;
+  --typography--xxl-font-weight       : var(--font-weight);
+  --typography--xxl-line-height       : var(--line-height);
+  --typography--xxl-text-transform    : none;
+
+  --typography--xl-font-family        : var(--font-family);
+  --typography--xl-font-size          : 2.4rem;
+  --typography--xl-font-weight        : var(--font-weight);
+  --typography--xl-line-height        : var(--line-height);
+  --typography--xl-text-transform     : none;
+
+  --typography--l-font-family         : var(--font-family);
+  --typography--l-font-size           : 1.8rem;
+  --typography--l-font-weight         : var(--font-weight);
+  --typography--l-line-height         : var(--line-height);
+  --typography--l-text-transform      : none;
+
+  --typography--m-font-family         : var(--font-family);
+  --typography--m-font-size           : var(--font-size);
+  --typography--m-font-weight         : var(--font-weight);
+  --typography--m-line-height         : var(--line-height);
+  --typography--m-text-transform      : none;
+
+  --typography--s-font-family         : var(--font-family);
+  --typography--s-font-size           : 1.4rem;
+  --typography--s-font-weight         : var(--font-weight);
+  --typography--s-line-height         : var(--line-height);
+  --typography--s-text-transform      : none;
+
+  --typography--xs-font-family        : var(--font-family);
+  --typography--xs-font-size          : 1.2rem;
+  --typography--xs-font-weight        : var(--font-weight);
+  --typography--xs-line-height        : var(--line-height);
+  --typography--xs-text-transform     : none;
+}
+
+.c-text--xxl {
+  --font-size: 3.2rem;
+
+  @include font(xxl);
+}
+
+.c-text--xl {
+  --font-size: 2.4rem;
+
+  @include font(xl);
+}
+
+.c-text--l {
+  --font-size: 1.8rem;
+
+  @include font(l);
+}
+
+.c-text--m {
+  @include font(m); 
+}
+
+.c-text--s {
+  --font-size: 1.4rem;
+  @include font(s);
+}
+
+.c-text--xs {
+  --font-size: 1.2rem;
+  @include font(xs);
+}
