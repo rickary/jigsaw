@@ -1,0 +1,24 @@
+.c-embed {
+  height: 0; 
+  overflow: hidden; 
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+.c-embed iframe, 
+.c-embed object, 
+.c-embed embed { 
+  height: 100%; 
+  left: 0; 
+  position: absolute;
+  top: 0; 
+  width: 100%; 
+}
+
+
+
+// .c-embed--landscape { 
+//   height: auto !important; 
+//   max-width: 100% !important; 
+//   padding-bottom: 56.25%;
+// }
